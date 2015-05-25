@@ -1,23 +1,14 @@
 {
-  "name": "mars-weather",
-  "version": "1.0.0",
+  "name": "weather.MARS",
+  "version": "0.0.0",
   "description": "Mars weather app",
-  "main": "index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/eshenfield/weather.mars.git"
-  },
-  "keywords": [
-    "mars",
-    "weather"
-  ],
-  "author": "Emily Shenfield",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/eshenfield/weather.mars/issues"
-  },
-  "homepage": "https://github.com/eshenfield/weather.mars"
+  "main": "server.js",
+  "author": "Emily",
+  "dependencies": {
+    "body-parser": "~1.5.2",
+    "cors": "^2.6.0",
+    "express": "~4.7.2",
+    "method-override": "~2.1.2",
+    "morgan": "~1.2.2"
+  }
 }

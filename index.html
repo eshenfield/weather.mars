@@ -4,13 +4,16 @@
     <meta charset="utf-8" />
     <title>Weather.MARS</title>
     <link rel="stylesheet" href="styles/style.css" />
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,600,200' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <h1>Weather.MARS</h1>
+    <div class="header">
+      <h1 class="title">Weather.MARS</h1>
 
-    <a ui-sref="current">Current Weather</a>
-    <a ui-sref="sunriseset">Sunrise/Sunset Times</a>
-    <a ui-sref="search">Search</a>
+      <a ui-sref="current">Current Weather</a>
+      <a ui-sref="sunriseset">Sunrise/Sunset Times</a>
+      <a ui-sref="search">Search</a>
+    </div>
 
     <div ui-view></div>
 

@@ -1,1 +1,39 @@
-<p>CURRENT</p>
+
+<!-- /*
+abs_humidity: null
+atmo_opacity: "Sunny"
+ls: 344
+max_temp: -1
+max_temp_fahrenheit: 30.2
+min_temp: -76
+min_temp_fahrenheit: -104.8
+pressure: 839
+pressure_string: "Higher"
+season: "Month 12"
+sol: 990
+sunrise: "2015-05-20T11:46:00Z"
+sunset: "2015-05-20T23:50:00Z"
+terrestrial_date: "2015-05-20"
+wind_direction: "--"
+wind_speed: null
+*/ -->
+<section class="weather-report grid grid-pad"> 
+  <h1 class="title" ng-show="!dateQuery">The current weather on Mars is: </h1>
+  <h1 class="title" ng-show="dateQuery">The weather on Mars was: </h1>
+
+  <div class="col-1-2">
+
+    <div class="temp" ng-show="tempFormat==='Celcius'">{{ current.min_temp }} &deg;C </div>
+    <div class="temp" ng-show="tempFormat==='Celcius'">{{ current.max_temp }} &deg;C </div>
+
+    <div class="temp" ng-show="tempFormat==='Fahrenheit'">{{ current.min_temp_fahrenheit }} &deg;F </div>
+    <div class="temp" ng-show="tempFormat==='Fahrenheit'">{{ current.max_temp_fahrenheit }} &deg;F </div>
+
+    <button class="temp-toggle" ng-click="changeTempForm()">{{tempFormat}}</button>
+  </div>
+
+  <div class="col-1-2">
+    <h2 class="condition">{{current.atmo_opacity}}</h2>
+  </div>
+</section>
+

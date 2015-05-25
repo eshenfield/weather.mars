@@ -1,16 +1,16 @@
 angular.module('marsWeather.services', [])
 
 .factory('Weather', function ($http) {
-  var getCurrentWeather = function() {
-    return $http({
-      method: 'GET',
-      url: 'http://marsweather.ingenology.com/v1/latest/'
-    });    
+  // takes optional param, date, to query for specific date
+  var getWeather = function(date) {
+    var dateQuery = date || 'latest/'
+    return $http.jsonp('http://marsweather.ingenology.com/v1/' + dateQuery + '?format=jsonp&callback=JSON_CALLBACK');
+   
   };
 
 
   return {
-    getCurrentWeather : getCurrentWeather
+    getWeather : getWeather
   }
-  
+
 });
