@@ -1,32 +1,48 @@
 
-<section class="weather-report grid grid-pad debug-grid"> 
-  <h1 class="date">updated on: {{current.terrestrial_date}}</h1>
-  <h1 class="title">weather on Mars: </h1>
+<section class="weather-report grid debug-grid"> 
 
+  <!-- LEFT QUARTER -->
+  <div class="col-1-4">&nbsp;</div>
+
+
+  <!-- CENTER HALF  -->
   <div class="col-1-2 debug-grid">
+    
+    <section class="temp-display debug">
+      <div class="temp-container">
+        <h1 class="date">updated on: {{current.terrestrial_date}}</h1>
 
-    <div class="temp low debug" ng-show="tempFormat==='Celcius'"><span>{{ current.min_temp }} &deg;C </span></div>
-    <div class="temp high debug" ng-show="tempFormat==='Celcius'"><span>{{ current.max_temp }} &deg;C </span></div>
-    <div class="temp avg debug" ng-show="tempFormat==='Celcius'"><span class="avg">avg temp: </span><span>{{ current.avg_tempC }} &deg;C </span></div>
+        <!-- WEATHER-CELCIUS -->
+        <div class="low debug" ng-show="tempFormat==='Celcius'"><span>{{ current.min_temp }} &deg;C </span></div>
+        <div class="avg debug" ng-show="tempFormat==='Celcius'"><span class="avg-title">avg temp: </span><span>{{ current.avg_tempC }} &deg;C </span></div>
+        <div class="high debug" ng-show="tempFormat==='Celcius'"><span>{{ current.max_temp }} &deg;C </span></div>
 
-    <div class="temp low debug" ng-show="tempFormat==='Fahrenheit'"><span>{{ current.min_temp_fahrenheit }} &deg;F <span></div>
-    <div class="temp high debug" ng-show="tempFormat==='Fahrenheit'"><span>{{ current.max_temp_fahrenheit }} &deg;F </span></div>
-    <div class="temp avg debug" ng-show="tempFormat==='Fahrenheit'"><span class="avg">avg temp: </span><span> {{ current.avg_tempF }} &deg;F </span></div>
+        <!-- WEATHER-FAHRENHEIT -->
+        <div class="low debug" ng-show="tempFormat==='Fahrenheit'"><span>{{ current.min_temp_fahrenheit }} &deg;F <span></div>
+        <div class="avg debug" ng-show="tempFormat==='Fahrenheit'"><span class="avg">avg temp: </span><span> {{ current.avg_tempF }} &deg;F </span></div>
+        <div class="high debug" ng-show="tempFormat==='Fahrenheit'"><span>{{ current.max_temp_fahrenheit }} &deg;F </span></div>
 
-    <button class="temp-toggle debug" ng-click="toggleTempForm()">units</button>
-  </div>
+        <!-- TOGGLE UNITS -->
+        <button class="temp-toggle debug" ng-click="toggleTempForm()">units</button>
+      </div>
+    </section>
 
-  <div class="col-1-2 debug-grid">
+    <!-- SUNNY -->
     <h2 class="condition debug"><span>{{current.atmo_opacity}}</span></h2>
+
+    <!-- SUNRISE/SUNSET -->
+    <div class="sunrise-set debug-grid">
+      <h3 class="rise-title debug"><span>sunrise: </span></h2>
+      <h2 class="sunrise debug"><span>{{current.sunrise}}</span></h3>
+
+      <h3 class="set-title debug"><span>sunset: </span></h2>
+      <h2 class="sunset debug"><span>{{current.sunset}}</span></h3>
+
+    </div>
   </div>
 
-  <div class="sunrise-set col-1 debug-grid">
-    <h3 class="rise-title debug">sunrise: </h2>
-    <h2 class="sunrise debug">{{current.sunrise}}</h3>
+  <!-- RIGHT QUARTER -->
+  <div class="col-1-4">&nbsp;</div>
 
-    <h3 class="set-title debug">sunset: </h2>
-    <h2 class="sunset debug">{{current.sunset}}</h3>
-
-  <div>
 </section>
 
