@@ -1,0 +1,18 @@
+
+    <form name="searchForm" class="debug" ng-submit="getImage()">
+      <input name="sol-date" 
+        class="debug"
+        ng-model="sol"
+        placeholder="Solar Day (0-996)" />
+
+      <p class="debug" ng-show="!images">The Rover didn't take any pictures that day! Try a different date.</p>
+
+      <button class="debug" type="submit" value="Search">See a photo</button>
+    </form>
+
+
+    <section class="img-display debug">
+      
+      <img src="{{picSrc}}">
+
+    </section>

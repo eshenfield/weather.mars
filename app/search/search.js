@@ -20,7 +20,6 @@ angular.module('marsWeather.search', [])
         $rootScope.formatDates();
         $location.path('/search-view');
       }
-      console.log($rootScope.current);
     })
     .catch(function(error) {
       console.error(error);

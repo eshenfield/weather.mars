@@ -2,6 +2,7 @@ angular.module('marsWeather', [
   'marsWeather.services',
   'marsWeather.current',
   'marsWeather.search',
+  'marsWeather.solimages',
   'ui.router'
 ])
 .config(function($stateProvider, $urlRouterProvider) {
@@ -23,5 +24,10 @@ angular.module('marsWeather', [
       url: '/search-view',
       templateUrl: "app/current/current.html",
       controller: 'SearchCtrl'
+    })
+    .state('solimages', {
+      url: '/solimages',
+      templateUrl: "app/solimages/solimages.html",
+      controller: 'imageCtrl'
     })
 });
