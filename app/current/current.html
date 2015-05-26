@@ -1,6 +1,6 @@
 
 <section class="weather-report grid grid-pad"> 
-  <h1 class="date">last updated on: {{current.terrestrial_date}}</h1>
+  <h1 class="date">Updated on: {{current.terrestrial_date}}</h1>
   <h1 class="title">weather on Mars: </h1>
 
   <div class="col-1-2">
@@ -11,7 +11,7 @@
     <div class="temp" ng-show="tempFormat==='Fahrenheit'">{{ current.min_temp_fahrenheit }} &deg;F </div>
     <div class="temp" ng-show="tempFormat==='Fahrenheit'">{{ current.max_temp_fahrenheit }} &deg;F </div>
 
-    <button class="temp-toggle" ng-click="toggleTempForm()">Change Units</button>
+    <button class="temp-toggle" ng-click="toggleTempForm()">units</button>
   </div>
 
   <div class="col-1-2">

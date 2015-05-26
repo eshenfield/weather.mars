@@ -9,12 +9,9 @@ angular.module('marsWeather.services', [])
     return $http.jsonp('http://marsweather.ingenology.com/v1/latest/?format=jsonp&callback=JSON_CALLBACK');
   };
 
-  var weather = {};
-
 
   return {
-    getWeather : getWeather,
-    weather : weather
+    getWeather : getWeather
   }
 
 })

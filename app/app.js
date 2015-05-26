@@ -6,7 +6,7 @@ angular.module('marsWeather', [
 ])
 .config(function($stateProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.otherwise("/");
+  $urlRouterProvider.otherwise("/current");
 
   $stateProvider
     .state('current', {
@@ -18,5 +18,10 @@ angular.module('marsWeather', [
       url: "/search",
       templateUrl: "app/search/search.html",
       controller: 'SearchCtrl'
-    });
+    })
+    .state('searchView', {
+      url: '/search-view',
+      templateUrl: "app/current/current.html",
+      controller: 'SearchCtrl'
+    })
 });

@@ -1,9 +1,8 @@
 angular.module('marsWeather.search', [])
 
-.controller('SearchCtrl', function ($scope, $location, Weather, Date) {
+.controller('SearchCtrl', function ($scope, $rootScope, $location, Weather, Date) {
   $scope.date = "2014-10-06"
   $scope.validDate = true;
-  $scope.weather = {};
 
   $scope.getWeatherOnDate = function() {
     var query = "terrestrial_date=" + $scope.date;
@@ -16,7 +15,9 @@ angular.module('marsWeather.search', [])
       if (data.data.results.length === 0) {
         $scope.validDate = false;
       } else {
-        $scope.weather = data.data.results[0];
+        $rootScope.current = data.data.results[0];
+        console.log($rootScope.current);
+        $location.path('/search-view');
       }
       console.log($scope.weather);
     })
@@ -24,10 +25,6 @@ angular.module('marsWeather.search', [])
       console.error(error);
     });
   };
-
-  $scope.renderWeatherView = function() {
-
-  }
 
 
 });

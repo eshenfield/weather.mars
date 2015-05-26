@@ -1,13 +1,13 @@
 angular.module('marsWeather.current', [])
 
-.controller('CurrentCtrl', function ($scope, Weather, Date) {
-  $scope.current = {};
-  $scope.tempFormat = "Celcius"
+.controller('CurrentCtrl', function ($scope, $rootScope, Weather, Date) {
+  $rootScope.current = {};
+  $rootScope.tempFormat = "Celcius"
   
   $scope.getCurrentWeather = function() {
     Weather.getWeather()
     .then(function(data) {
-      $scope.current = data.data.report;
+      $rootScope.current = data.data.report;
       $scope.formatDates();
     })
     .catch(function(err) {
@@ -17,19 +17,19 @@ angular.module('marsWeather.current', [])
 
   $scope.getCurrentWeather();
 
-  $scope.toggleTempForm = function() {
-    if ($scope.tempFormat === "Celcius"){
-      $scope.tempFormat = "Fahrenheit"
+  $rootScope.toggleTempForm = function() {
+    if ($rootScope.tempFormat === "Celcius"){
+      $rootScope.tempFormat = "Fahrenheit"
     } else {
-      $scope.tempFormat = "Celcius"
+      $rootScope.tempFormat = "Celcius"
     }
   };
 
   $scope.formatDates = function() {
-    console.log("Sunrise: ", $scope.current.sunrise)
-    $scope.current.sunrise = Date.parseDate($scope.current.sunrise, true);
-    $scope.current.sunset = Date.parseDate($scope.current.sunset, true);
-    $scope.current.terrestrial_date = Date.parseDate($scope.current.terrestrial_date, false);
+    console.log("Sunrise: ", $rootScope.current.sunrise)
+    $rootScope.current.sunrise = Date.parseDate($rootScope.current.sunrise, true);
+    $rootScope.current.sunset = Date.parseDate($rootScope.current.sunset, true);
+    $rootScope.current.terrestrial_date = Date.parseDate($rootScope.current.terrestrial_date, false);
   };
 
 });
