@@ -7,11 +7,13 @@
     <link href='http://fonts.googleapis.com/css?family=Raleway:400,600,200' rel='stylesheet' type='text/css'>
   </head>
   <body>
-    <div class="header">
-      <h1 class="page-title">Weather.MARS</h1>
+    <div class="header debug">
+      <h1 class="page-title debug">RED WEATHER</h1>
 
-      <a ui-sref="current">Current Weather</a>
-      <a ui-sref="search">Search</a>
+      <div class="navbar">
+        <a ui-sref="current" class="nav debug">Current Weather</a>
+        <a ui-sref="search" class="nav debug">Search</a>
+      </div>
     </div>
 
     <div ui-view></div>

@@ -15,7 +15,7 @@ angular.module('marsWeather.current', [])
     });
   };
 
-  $scope.getCurrentWeather();
+  $scope.getCurrentWeather();    
 
   $rootScope.toggleTempForm = function() {
     if ($rootScope.tempFormat === "Celcius"){
@@ -25,8 +25,7 @@ angular.module('marsWeather.current', [])
     }
   };
 
-  $scope.formatDates = function() {
-    console.log("Sunrise: ", $rootScope.current.sunrise)
+  $rootScope.formatDates = function() {
     $rootScope.current.sunrise = Date.parseDate($rootScope.current.sunrise, true);
     $rootScope.current.sunset = Date.parseDate($rootScope.current.sunset, true);
     $rootScope.current.terrestrial_date = Date.parseDate($rootScope.current.terrestrial_date, false);

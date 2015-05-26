@@ -1,29 +1,29 @@
 
-<section class="weather-report grid grid-pad"> 
-  <h1 class="date">Updated on: {{current.terrestrial_date}}</h1>
+<section class="weather-report grid grid-pad debug-grid"> 
+  <h1 class="date">updated on: {{current.terrestrial_date}}</h1>
   <h1 class="title">weather on Mars: </h1>
 
-  <div class="col-1-2">
+  <div class="col-1-2 debug-grid">
 
-    <div class="temp" ng-show="tempFormat==='Celcius'">{{ current.min_temp }} &deg;C </div>
-    <div class="temp" ng-show="tempFormat==='Celcius'">{{ current.max_temp }} &deg;C </div>
+    <div class="temp low debug" ng-show="tempFormat==='Celcius'"><span>{{ current.min_temp }} &deg;C </span></div>
+    <div class="temp high debug" ng-show="tempFormat==='Celcius'"><span>{{ current.max_temp }} &deg;C </span></div>
 
-    <div class="temp" ng-show="tempFormat==='Fahrenheit'">{{ current.min_temp_fahrenheit }} &deg;F </div>
-    <div class="temp" ng-show="tempFormat==='Fahrenheit'">{{ current.max_temp_fahrenheit }} &deg;F </div>
+    <div class="temp low debug" ng-show="tempFormat==='Fahrenheit'"><span>{{ current.min_temp_fahrenheit }} &deg;F <span></div>
+    <div class="temp high debug" ng-show="tempFormat==='Fahrenheit'"><span>{{ current.max_temp_fahrenheit }} &deg;F </span></div>
 
-    <button class="temp-toggle" ng-click="toggleTempForm()">units</button>
+    <button class="temp-toggle debug" ng-click="toggleTempForm()">units</button>
   </div>
 
-  <div class="col-1-2">
-    <h2 class="condition">{{current.atmo_opacity}}</h2>
+  <div class="col-1-2 debug-grid">
+    <h2 class="condition debug"><span>{{current.atmo_opacity}}</span></h2>
   </div>
 
-  <div class="col-1">
-    <h2 ng-click="formatDates" class="title">sunrise: </h2>
-    <h3 class="sunrise">{{current.sunrise}}</h3>
+  <div class="col-1 debug-grid">
+    <h2 ng-click="formatDates" class="title debug">sunrise: </h2>
+    <h3 class="sunrise debug">{{current.sunrise}}</h3>
 
-    <h2 class="title">sunset: </h2>
-    <h3 class="sunset">{{current.sunset}}</h3>
+    <h2 class="title debug">sunset: </h2>
+    <h3 class="sunset debug">{{current.sunset}}</h3>
 
   <div>
 </section>

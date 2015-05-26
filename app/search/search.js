@@ -1,7 +1,7 @@
 angular.module('marsWeather.search', [])
 
 .controller('SearchCtrl', function ($scope, $rootScope, $location, Weather, Date) {
-  $scope.date = "2014-10-06"
+  //$scope.date = "2014-10-06"
   $scope.validDate = true;
 
   $scope.getWeatherOnDate = function() {
@@ -15,11 +15,12 @@ angular.module('marsWeather.search', [])
       if (data.data.results.length === 0) {
         $scope.validDate = false;
       } else {
+        $scope.validDate = true;
         $rootScope.current = data.data.results[0];
-        console.log($rootScope.current);
+        $rootScope.formatDates();
         $location.path('/search-view');
       }
-      console.log($scope.weather);
+      console.log($rootScope.current);
     })
     .catch(function(error) {
       console.error(error);
