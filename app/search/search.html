@@ -1,1 +1,11 @@
-<p>SEARCH</p>
+ <section class="search">
+
+    <form name="searchForm" ng-submit="getWeatherOnDate()">
+      <input name="date" 
+        ng-model="date"
+        placeholder="YYYY-MM-DD" />
+
+      <button type="submit" ng-click="renderWeatherView()" value="Search">Get the Weather</button>
+    </form>
+
+  </section> 

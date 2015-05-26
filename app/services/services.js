@@ -2,15 +2,19 @@ angular.module('marsWeather.services', [])
 
 .factory('Weather', function ($http) {
   // takes optional param, date, to query for specific date
-  var getWeather = function(date) {
-    var dateQuery = date || 'latest/'
-    return $http.jsonp('http://marsweather.ingenology.com/v1/' + dateQuery + '?format=jsonp&callback=JSON_CALLBACK');
-   
+  var getWeather = function(dateQuery) {
+    if (dateQuery){
+      return $http.jsonp('http://marsweather.ingenology.com/v1/archive/?' + dateQuery + '&format=jsonp&callback=JSON_CALLBACK');
+    }
+    return $http.jsonp('http://marsweather.ingenology.com/v1/latest/?format=jsonp&callback=JSON_CALLBACK');
   };
+
+  var weather = {};
 
 
   return {
-    getWeather : getWeather
+    getWeather : getWeather,
+    weather : weather
   }
 
 })
@@ -34,14 +38,24 @@ angular.module('marsWeather.services', [])
     if (isTime){
       return dateString.substr(11);
     }
-    var month = numberToMonth[parseInt(dateString.substr(5, 7))];
-    var year = dateString.substr(0,4);
-    var date = dateString.substr(8,10);
+    var month = parseInt(dateString.substr(5, 7));
+    var year = parseInt(dateString.substr(0,4));
+    var date = parseInt(dateString.substr(8,10));
 
-    return month + ' ' + date + ', ' + year;
+    return numberToMonth[month] + ' ' + date + ', ' + year;
   }
 
+  var createQueryString = function(dateString) {
+    var year = parseInt(dateString.substr(0,4));
+    var month = dateString.charAt(5) + dateString.charAt(6);
+    var date = dateString.substr(8);
+
+    return 'terrestrial_date_start=' + year + '-' + month + '-01' + '&terrestrial_date_end=' + year + '-' + month + '-30';
+
+  } 
+
   return {
-    parseDate: parseDate
+    parseDate: parseDate,
+    createQueryString : createQueryString
   }
 });
