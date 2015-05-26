@@ -3,6 +3,7 @@ angular.module('marsWeather', [
   'marsWeather.current',
   'marsWeather.search',
   'marsWeather.solimages',
+  '720kb.datepicker',
   'ui.router'
 ])
 .config(function($stateProvider, $urlRouterProvider) {

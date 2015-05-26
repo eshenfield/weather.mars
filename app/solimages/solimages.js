@@ -5,7 +5,7 @@ angular.module('marsWeather.solimages', [])
   $scope.picSrc = '../images/default_rover.jpg'
 
   $scope.getImage = function() {
-    console.log("getting image for: ", $scope.sol);
+    $scope.error = false;
     Weather.getImages($scope.sol)
     .then(function(data) {
       $scope.error = false;

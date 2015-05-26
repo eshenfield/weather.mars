@@ -1,15 +1,14 @@
  <section class="search">
 
     <form name="searchForm" class="debug" ng-submit="getWeatherOnDate()">
-      <input name="date" 
-        class="debug"
-        ng-model="date"
-        ng-pattern="/^(?:(?:(?:(?:(?:[13579][26]|[2468][048])00)|(?:[0-9]{2}(?:(?:[13579][26])|(?:[2468][048]|0[48]))))-(?:(?:(?:09|04|06|11)-(?:0[1-9]|1[0-9]|2[0-9]|30))|(?:(?:01|03|05|07|08|10|12)-(?:0[1-9]|1[0-9]|2[0-9]|3[01]))|(?:02-(?:0[1-9]|1[0-9]|2[0-9]))))|(?:[0-9]{4}-(?:(?:(?:09|04|06|11)-(?:0[1-9]|1[0-9]|2[0-9]|30))|(?:(?:01|03|05|07|08|10|12)-(?:0[1-9]|1[0-9]|2[0-9]|3[01]))|(?:02-(?:[01][0-9]|2[0-8])))))$/"
-        placeholder="YYYY-MM-DD" />
 
-      <p class="debug" ng-show="!validDate">The Rover didn't look out the window that day! Try a different date.</p>
+        <datepicker date-format="yyyy-MM-dd" date-min-limit="2011/01/01" date-max-limit="2014/05/20">
+          <input ng-model="date">
+        </datepicker>
 
       <button class="debug" type="submit" value="Search">Get the Weather</button>
+
+      <p class="debug" ng-show="!validDate">The Rover didn't look out the window that day! Try a different date.</p>
     </form>
 
   </section> 
