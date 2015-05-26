@@ -72,6 +72,10 @@ table {
   width: 50%;
 }
 
+.col-1 {
+  width: 100%;
+}
+
 .grid:after {
   content: "";
   display: table;

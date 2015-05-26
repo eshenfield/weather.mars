@@ -1,21 +1,23 @@
 angular.module('marsWeather.current', [])
 
-.controller('CurrentCtrl', function ($scope, Weather) {
+.controller('CurrentCtrl', function ($scope, Weather, Date) {
   $scope.current = {};
-  $scope.dateQuery = false;
   $scope.tempFormat = "Celcius"
   
   $scope.getCurrentWeather = function() {
     Weather.getWeather()
     .then(function(data) {
       $scope.current = data.data.report;
+      $scope.formatDates();
     })
     .catch(function(err) {
       console.error(err);
     });
   };
 
-  $scope.changeTempForm = function() {
+  $scope.getCurrentWeather();
+
+  $scope.toggleTempForm = function() {
     if ($scope.tempFormat === "Celcius"){
       $scope.tempFormat = "Fahrenheit"
     } else {
@@ -23,10 +25,12 @@ angular.module('marsWeather.current', [])
     }
   };
 
-  if (!$scope.dateQuery) {
-    $scope.getCurrentWeather();
-  }
-
+  $scope.formatDates = function() {
+    console.log("Sunrise: ", $scope.current.sunrise)
+    $scope.current.sunrise = Date.parseDate($scope.current.sunrise, true);
+    $scope.current.sunset = Date.parseDate($scope.current.sunset, true);
+    $scope.current.terrestrial_date = Date.parseDate($scope.current.terrestrial_date, false);
+  };
 
 });
 
