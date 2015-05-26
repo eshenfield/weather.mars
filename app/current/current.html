@@ -7,9 +7,11 @@
 
     <div class="temp low debug" ng-show="tempFormat==='Celcius'"><span>{{ current.min_temp }} &deg;C </span></div>
     <div class="temp high debug" ng-show="tempFormat==='Celcius'"><span>{{ current.max_temp }} &deg;C </span></div>
+    <div class="temp avg debug" ng-show="tempFormat==='Celcius'"><span class="avg">avg temp: </span><span>{{ current.avg_tempC }} &deg;C </span></div>
 
     <div class="temp low debug" ng-show="tempFormat==='Fahrenheit'"><span>{{ current.min_temp_fahrenheit }} &deg;F <span></div>
     <div class="temp high debug" ng-show="tempFormat==='Fahrenheit'"><span>{{ current.max_temp_fahrenheit }} &deg;F </span></div>
+    <div class="temp avg debug" ng-show="tempFormat==='Fahrenheit'"><span class="avg">avg temp: </span><span> {{ current.avg_tempF }} &deg;F </span></div>
 
     <button class="temp-toggle debug" ng-click="toggleTempForm()">units</button>
   </div>
@@ -18,12 +20,12 @@
     <h2 class="condition debug"><span>{{current.atmo_opacity}}</span></h2>
   </div>
 
-  <div class="col-1 debug-grid">
-    <h2 ng-click="formatDates" class="title debug">sunrise: </h2>
-    <h3 class="sunrise debug">{{current.sunrise}}</h3>
+  <div class="sunrise-set col-1 debug-grid">
+    <h3 class="rise-title debug">sunrise: </h2>
+    <h2 class="sunrise debug">{{current.sunrise}}</h3>
 
-    <h2 class="title debug">sunset: </h2>
-    <h3 class="sunset debug">{{current.sunset}}</h3>
+    <h3 class="set-title debug">sunset: </h2>
+    <h2 class="sunset debug">{{current.sunset}}</h3>
 
   <div>
 </section>

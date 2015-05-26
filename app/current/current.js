@@ -8,7 +8,7 @@ angular.module('marsWeather.current', [])
     Weather.getWeather()
     .then(function(data) {
       $rootScope.current = data.data.report;
-      $scope.formatDates();
+      $rootScope.formatDates();
     })
     .catch(function(err) {
       console.error(err);
@@ -26,6 +26,8 @@ angular.module('marsWeather.current', [])
   };
 
   $rootScope.formatDates = function() {
+    $rootScope.current.avg_tempF = ($rootScope.current.max_temp_fahrenheit + $rootScope.current.min_temp_fahrenheit) / 2
+    $rootScope.current.avg_tempC = ($rootScope.current.max_temp + $rootScope.current.min_temp) / 2
     $rootScope.current.sunrise = Date.parseDate($rootScope.current.sunrise, true);
     $rootScope.current.sunset = Date.parseDate($rootScope.current.sunset, true);
     $rootScope.current.terrestrial_date = Date.parseDate($rootScope.current.terrestrial_date, false);

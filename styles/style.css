@@ -95,9 +95,18 @@ table {
 }
 
 /************* ALL *************/
+html {
+  height: 100%;
+}
+
 body {
   font-family: Raleway, sans-serif;
   background-color: #F0C2B2;
+  background: no-repeat;
+  background: -webkit-linear-gradient(#f4d3c7, #e48f72); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#f4d3c7, #e48f72); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#f4d3c7, #e48f72); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#f4d3c7 , #e48f72); /* Standard syntax */
 }
 
 .debug {
@@ -114,7 +123,7 @@ body {
 
 .header {
   background-image: url('../images/rover_drive.png');
-  height: 200px;
+  height: 300px;
   font-size: 50px;
   position: relative;
 }
@@ -130,6 +139,7 @@ body {
 .header a {
   color: white;
   text-decoration: none;
+  font-weight: 200;
   font-size: 20px;
 }
 
@@ -180,18 +190,42 @@ button[type=submit] {
 }
 
 .temp, .condition {
-  font-size: 40px;
+  background: rgb(200, 54, 54); 
+  background: rgba(0, 0, 0, 0.7); 
+  color: white;
+  font-size: 30px;
+  font-weight: 200;
+  float: right;
   display: inline-block;
   position: relative;
-  width: 40%;
+  margin: 0 30px 0 30px;
+  width: 20%;
   height: 200px;
+}
+
+.low,
+.high {
+  width: 10%;
+  height: 100px;
+  font-size: 15px;
+  margin: 40px 10px 40px 10px;
+}
+
+.condition {
+  float: left;
 }
 
 .temp span, 
 .condition span {
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: 50%;
+  left: 45px;
+}
+
+.temp .avg {
+  top: 0;
+  left: 0;
+  font-size: 15px;
 }
 
 
@@ -200,12 +234,41 @@ button[type=submit] {
   margin-left: 40%;
 }
 
+/************* SUNRISE/SUNSET *************/
 
 
+.sunrise-set  h2 {
+  font-size: 30px;
 
+}
 
+/************* ROVER IMAGES *************/
 
+.formbox {
+  position: relative;
+}
 
+.formbox form {
+  position: absolute;
+  left: 40%;
+  display: inline-block;
+}
+
+.img-display {
+  position: relative;
+}
+.rover-pic {
+  border: 1px solid black;
+  width: 600px;
+  position: absolute;
+  top: 50px;
+  left: 30%;
+}
+figcaption {
+  position: absolute;
+  left: 30%;
+  top: 660px;
+}
 
 
 
