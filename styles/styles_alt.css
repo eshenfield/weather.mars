@@ -243,6 +243,7 @@ body {
 }
 
 /************* IMG SEARCH *************/
+
 .formbox {
   display: block;
   position: relative;
@@ -274,6 +275,11 @@ body {
 
 .img-display figcaption {
   margin-left: 30%;
+}
+
+.img-display figcaption a {
+  text-decoration: none;
+  color: white;
 }
 
 

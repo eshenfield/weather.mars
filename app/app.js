@@ -31,4 +31,5 @@ angular.module('marsWeather', [
       templateUrl: "app/solimages/solimages.html",
       controller: 'imageCtrl'
     })
-});
+})
+
