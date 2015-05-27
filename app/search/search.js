@@ -9,7 +9,6 @@ angular.module('marsWeather.search', [])
     //var query = Date.createQueryString($scope.date);
     //var dates = [];
 
-
     Weather.getWeather(query)
     .then(function(data){
       if (data.data.results.length === 0) {
@@ -24,6 +23,14 @@ angular.module('marsWeather.search', [])
     .catch(function(error) {
       console.error(error);
     });
+  };
+
+  $rootScope.formatDates = function() {
+    $rootScope.current.avg_tempF = ($rootScope.current.max_temp_fahrenheit + $rootScope.current.min_temp_fahrenheit) / 2
+    $rootScope.current.avg_tempC = ($rootScope.current.max_temp + $rootScope.current.min_temp) / 2
+    $rootScope.current.sunrise = Date.parseDate($rootScope.current.sunrise, true);
+    $rootScope.current.sunset = Date.parseDate($rootScope.current.sunset, true);
+    $rootScope.current.terrestrial_date = Date.parseDate($rootScope.current.terrestrial_date, false);
   };
 
 
