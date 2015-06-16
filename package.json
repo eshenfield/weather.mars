@@ -5,7 +5,7 @@
   "main": "server.js",
   "author": "Emily",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "postinstall": "bower install && grunt build"
   },
   "dependencies": {
