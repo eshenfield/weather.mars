@@ -16,5 +16,9 @@
     "grunt-contrib-cssmin": "^0.12.3",
     "grunt-nodemon": "^0.4.0",
     "grunt-shell": "^1.1.2"
+  },
+  "scripts": {
+    "start": "nodemon server.js",
+    "postinstall": "bower install && grunt build"
   }
 }
