@@ -6427,11 +6427,13 @@ html, body {
 }
 
 .title {
+  color: black;
   font-size: 44px;
   font-weight: 300;
 }
 
 .current-temp {
+  color: black;
   background-color: white;
   width: 50%;
   margin-left: 26%;
