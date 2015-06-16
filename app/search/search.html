@@ -1,14 +1,14 @@
- <section class="search">
+<section class="middle-box">
 
-    <form name="searchForm" class="debug" ng-submit="getWeatherOnDate()">
+  <form name="searchForm" class="search-form" ng-submit="getWeatherOnDate()">
 
-        <datepicker date-format="yyyy-MM-dd" date-min-limit="2011/01/01" date-max-limit="2014/05/20">
-          <input ng-model="date">
-        </datepicker>
+      <datepicker date-format="yyyy-MM-dd" date-min-limit="2011/01/01" date-max-limit="2014/05/20">
+        <input class="search-input" placeholder="Choose a date" ng-model="date">
+      </datepicker>
 
-      <button class="debug" type="submit" value="Search">Get the Weather</button>
+    <button class="" type="submit" value="Search">Get the Weather</button>
 
-      <p class="debug" ng-show="!validDate">The Rover didn't look out the window that day! Try a different date.</p>
-    </form>
+    <p class="" ng-show="!validDate">The Rover didn't look out the window that day! Try a different date.</p>
+  </form>
 
-  </section> 
+</section> 

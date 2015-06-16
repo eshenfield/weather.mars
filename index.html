@@ -2,23 +2,29 @@
 <html ng-app='marsWeather'>
   <head>
     <meta charset="utf-8" />
-    <title>Weather.MARS</title>
-    <link rel="stylesheet" href="styles/styles_alt.css" />
+    <title>red weather</title>
+<!--     <link href="/styles/style.css" rel="stylesheet" type="text/css" />
     <link href="/styles/angular-datepicker.css" rel="stylesheet" type="text/css" />
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,600,200' rel='stylesheet' type='text/css'>
+    <link href="/styles/bootstrap.css" rel="stylesheet" type="text/css" /> -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,600,200' rel='stylesheet' type='text/css' />
+    <link href="/styles/style.min.css" rel="stylesheet" type="text/css" />
   </head>
   <body>
-    <div class="header debug">
-      <h1 class="page-title debug">RED WEATHER</h1>
 
-      <div class="navbar">
-        <a ui-sref="current" class="nav debug">Current Weather</a>
-        <a ui-sref="search" class="nav debug">Search</a>
-        <a ui-sref="solimages" class="nav debug">See Rover Images</a>
-      </div>
+    <div class="row wrapper border-bottom page-heading">
+        <div class="col-sm-4">
+            <h2 class="title">Red Weather</h2>
+        </div>
+        <div class="col-sm-8">
+            <div class="title-action">
+                <a ui-sref="current" class="btn btn-primary">Current Weather</a>
+                <a ui-sref="search" class="btn btn-primary">Search</a>
+                <a ui-sref="solimages" class="btn btn-primary">See Rover Images</a>
+            </div>
+        </div>
     </div>
 
-    <div ui-view></div>
+    <div ui-view></div> 
 
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>

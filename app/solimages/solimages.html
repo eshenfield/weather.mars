@@ -1,24 +1,21 @@
+<section class="middle-box">
+  <figure class="">
+    <form name="searchForm" class="" ng-submit="getImage()">
+      <input name="sol-date" 
+        class=""
+        ng-model="sol"
+        ng-pattern="/^([1-9][0-9]{0,2}|996)$/"
+        placeholder="Solar Day (0-996)" />
 
-    <figure class="formbox">
-      <form name="searchForm" class="debug" ng-submit="getImage()">
-        <input name="sol-date" 
-          class="debug"
-          ng-model="sol"
-          ng-pattern="/^([1-9][0-9]{0,2}|996)$/"
-          placeholder="Solar Day (0-996)" />
-
-        <button class="debug" type="submit" value="Search">See a photo</button>
-      <p ng-show="error">Error occurred, try a different day!</p>
-      <p class="debug" ng-show="!images">The Rover didn't take any pictures that day! Try a different date.</p>
-      </figure>
-    </div>
-
-
-    <section class="img-display debug">
-      
-      <figure>
-        <img class="rover-pic"src="{{picSrc}}">
-        <figcaption ng-show="sol">Photos from: <a href="http://mars.jpl.nasa.gov/">http://mars.jpl.nasa.gov/</a></figcaption>
-        <figcaption ng-show="!sol">Taken on Sol 2, Curiosity takes a selfie</caption>
-      </figure>
-    </section>
+      <button class="" type="submit" value="Search">See a photo</button>
+    <p ng-show="error">Error occurred, try a different day!</p>
+    <p class="" ng-show="!images">The Rover didn't take any pictures that day! Try a different date.</p>
+  </figure>
+  </div>
+    
+  <figure>
+    <img class=""src="{{picSrc}}">
+    <figcaption ng-show="sol">Photos from: <a href="http://mars.jpl.nasa.gov/">http://mars.jpl.nasa.gov/</a></figcaption>
+    <figcaption ng-show="!sol">Taken on Sol 2, Curiosity takes a selfie</caption>
+  </figure>
+</section>
