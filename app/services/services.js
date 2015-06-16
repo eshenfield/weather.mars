@@ -4,13 +4,13 @@ angular.module('marsWeather.services', [])
   // takes optional param, date, to query for specific date
   var getWeather = function(dateQuery) {
     if (dateQuery){
-      return $http.jsonp('http://marsweather.ingenology.com/v1/archive/?' + dateQuery + '&format=jsonp&callback=JSON_CALLBACK');
+      return $http.jsonp('https://marsweather.ingenology.com/v1/archive/?' + dateQuery + '&format=jsonp&callback=JSON_CALLBACK');
     }
-    return $http.jsonp('http://marsweather.ingenology.com/v1/latest/?format=jsonp&callback=JSON_CALLBACK');
+    return $http.jsonp('https://marsweather.ingenology.com/v1/latest/?format=jsonp&callback=JSON_CALLBACK');
   };
 
   var getImages = function(dateQuery) {
-    var jsonpUrl = "https://jsonp.afeld.me/?callback=JSON_CALLBACK&url=http://mars.jpl.nasa.gov/msl-raw-images/image/images_sol" + dateQuery + ".json"
+    var jsonpUrl = "https://jsonp.afeld.me/?callback=JSON_CALLBACK&url=https://mars.jpl.nasa.gov/msl-raw-images/image/images_sol" + dateQuery + ".json"
     return $http.jsonp(jsonpUrl);
   };
 
