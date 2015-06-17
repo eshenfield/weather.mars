@@ -2,7 +2,7 @@ angular.module('marsWeather.solimages', [])
 
 .controller('imageCtrl', function($scope, $rootScope, Weather) {
   $scope.images = true;
-  $scope.picSrc = '../../images/default_rover.jpg'
+  $scope.picSrc = undefined;
 
   $scope.getImage = function() {
     $scope.error = false;
