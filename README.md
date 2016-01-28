@@ -6,5 +6,7 @@ Weather.mars is a weather app for Mars. Using data from the Mars Atmospheric Agg
 
 It's tough to visualize the cosmos. Even our near neighbors in the solar system often seem abstract and very far away (which, they are). Making connections between the planets around us and earth through a familiar platform like a weather app helps to remove some of the abstraction of the world outside our atmosphere.
 
+Check out the hosted version at: [Red Weather](http://red-weather.herokuapp.com/)
+
 ## Getting Started:
 To check it out, run `grunt serve` and open up localhost:8080!
